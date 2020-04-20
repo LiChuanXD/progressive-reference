@@ -8,18 +8,7 @@ const app = express();
 app.use(helmet());
 
 //static files
-app.use(express.static(path.join(__dirname , "public")));
-app.get('/' , (req , res) => {
-    res.sendFile('/index.html');
-});
-
-app.get('/about.html' , (req , res) => {
-    res.sendFile('/about.html');
-});
-
-app.get('/contact.html' , (req , res) => {
-    res.sendFile('/contact.html');
-});
+app.use('/' , express.static(path.join(__dirname , "public")));
 
 
 //listen to port
